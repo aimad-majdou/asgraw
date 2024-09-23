@@ -2,8 +2,9 @@
 
 ## TODO
 
+- [x] Deploy to vercel
 - [ ] Scaffold basic ui with mock data
-- [ ] Tidy up build process
+- [x] Tidy up build process
 - [ ] Set up a database (vercel postgresql)
 - [ ] Attach db to UI
 - [ ] Implement authentication (w/ next-auth)
