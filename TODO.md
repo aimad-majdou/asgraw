@@ -2,9 +2,10 @@
 
 ## TODO
 
-- [ ] Scaffold basic ui with mock data
-- [ ] Tidy up build process
-- [ ] Set up a database (vercel postgresql)
+- [x] Deploy the app (vercel)
+- [x] Tidy up build process
+- [x] Set up a database (neon postgresql)
+- [ ] Scaffold basic ui
 - [ ] Attach db to UI
 - [ ] Implement authentication (w/ next-auth)
 - [ ] "Taints" (server only / DAO)

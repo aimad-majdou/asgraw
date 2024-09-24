@@ -4,6 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "db:migrate": "dotenv -e .env.local -- prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:studio": "dotenv -e .env.local -- prisma studio",
+    "db:generate": "prisma generate",
+    "db:seed": "dotenv -e .env.local -- prisma db seed",
+    "db:pull": "dotenv -e .env.local -- prisma db pull",
+    "db:push": "dotenv -e .env.local -- prisma db push",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -11,6 +18,8 @@
   "dependencies": {
     "@auth/core": "^0.35.0",
     "@auth/prisma-adapter": "^2.5.0",
+    "@neondatabase/serverless": "^0.9.5",
+    "@prisma/adapter-neon": "^5.19.1",
     "@prisma/client": "^5.19.1",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-slot": "^1.1.0",
@@ -22,12 +31,16 @@
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
     "@types/node": "^20.16.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/ws": "^8.5.12",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
     "postcss": "^8",
