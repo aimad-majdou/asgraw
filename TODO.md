@@ -18,3 +18,25 @@
 - [ ] Add internationalization
 - [ ] Write tests
 - [ ] (Optional) Typesafe Envs (w/ t3-env)
+
+## upfront design process
+
+- [ ] Home page
+  - path: `'/'`
+  - data:
+    - [ ] list of topics
+    - [ ] list of posts
+- [ ] View a topic
+  - path: `'/topics/[slug]'`
+  - data:
+    - [ ] single topic
+    - [ ] list of posts
+- [ ] View a post
+  - path: `'/topics/[slug]/posts/[postId]'`
+  - data:
+    - [ ] single post
+    - [ ] list of comments
+- [ ] Create a post
+  - path: '/new'
+  - data:
+    - [ ] list of topics
