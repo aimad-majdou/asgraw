@@ -5,6 +5,7 @@
 - [x] Deploy the app (vercel)
 - [x] Tidy up build process
 - [x] Set up a database (neon postgresql)
+- [x] Set up OAuth
 - [ ] Scaffold basic ui
 - [ ] Attach db to UI
 - [ ] Implement authentication (w/ next-auth)
