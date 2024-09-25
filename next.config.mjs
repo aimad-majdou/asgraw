@@ -6,6 +6,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true, // check this in github actions
   },
+  experimental: {
+    serverComponentsExternalPackages: ['pino', 'pino-pretty'],
+  },
 };
 
 export default nextConfig;

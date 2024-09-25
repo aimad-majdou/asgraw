@@ -1,7 +1,8 @@
-import { PrismaAdapter } from "@auth/prisma-adapter";
-import NextAuth from "next-auth";
-import GitHub from "next-auth/providers/github";
-import { prisma } from "./db/prisma";
+import { PrismaAdapter } from '@auth/prisma-adapter';
+import NextAuth from 'next-auth';
+import GitHub from 'next-auth/providers/github';
+import { prisma } from './db/prisma';
+import { logger } from './lib/logger';
 
 export const {
   handlers: { GET, POST },
@@ -22,5 +23,10 @@ export const {
       session.user.id = user.id;
       return session;
     },
+  },
+  logger: {
+    error: (code, ...message) => logger.error(code, ...message),
+    warn: (code, ...message) => logger.warn(code, ...message),
+    debug: (code, ...message) => logger.debug(code, ...message),
   },
 });
