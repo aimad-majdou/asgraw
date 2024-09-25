@@ -16,7 +16,9 @@
 - [ ] Ratelimiting (upstash)
 - [ ] Improve UI/UX
 - [ ] Add internationalization
-- [ ] Write tests
+- [ ] Write unit and integration tests (w/ vitest)
+- [ ] Write e2e tests (w/ playwright)
+- [ ] Add CI/CD (w/ GitHub Actions)
 - [ ] (Optional) Typesafe Envs (w/ t3-env)
 
 ## upfront design process
