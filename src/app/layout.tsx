@@ -1,6 +1,7 @@
 import AppHeader from "@/components/header/app-header";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import React from "react";
 import "./globals.css";
 import Providers from "./providers";
 
@@ -23,8 +24,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -35,6 +38,7 @@ export default function RootLayout({
           <AppHeader />
           <main>{children}</main>
         </Providers>
+        {modal}
       </body>
     </html>
   );

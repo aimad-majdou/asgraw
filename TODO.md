@@ -11,6 +11,7 @@
 - [x] Implement authentication (w/ next-auth)
 - [x] Add logger (w/ pino)
 - [ ] "Taints" (server only / DAO)
+- [ ] Routing/new topic page (parallel route)
 - [ ] Routing/new post page (parallel route)
 - [ ] Error management (w/ Sentry)
 - [ ] Analytics (posthog)
