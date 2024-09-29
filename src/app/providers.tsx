@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import { SessionProvider } from "next-auth/react";
 
 interface ProvidersProps {
@@ -6,5 +7,10 @@ interface ProvidersProps {
 
 export default function Providers({ children }: ProvidersProps) {
   // Add providers here
-  return <SessionProvider>{children}</SessionProvider>;
+  return (
+    <SessionProvider>
+      {children}
+      <Toaster />
+    </SessionProvider>
+  );
 }
