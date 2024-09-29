@@ -1,9 +1,12 @@
 "use server";
 
 import { UnauthorizedError } from "@/errors/unauthorized-error";
+import PATHS from "@/paths";
 import { TopicCreateSchema, TopicCreateSchemaType } from "@/schemas/topic";
 import { TopicService } from "@/services/topic.service";
-import { Prisma } from "@prisma/client";
+import { Prisma, Topic } from "@prisma/client";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { ActionFormState } from "./actions.types";
 
 export type CreateTopicFormState = ActionFormState<TopicCreateSchemaType>;
@@ -24,10 +27,12 @@ export async function createTopic(
     };
   }
 
+  let topic: Topic;
+
   try {
     // Attempt to create the snippet in the database
     // the form data is validated server-side using Prisma's schema extension (which leverages Zod for validation).
-    await TopicService.create(result.data);
+    topic = await TopicService.create(result.data);
   } catch (error) {
     if (error instanceof UnauthorizedError) {
       return {
@@ -60,5 +65,7 @@ export async function createTopic(
       },
     };
   }
-  return { errors: {} };
+
+  revalidatePath(PATHS.home());
+  redirect(PATHS.topic.show(topic.slug));
 }
