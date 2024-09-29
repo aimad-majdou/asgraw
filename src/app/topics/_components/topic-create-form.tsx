@@ -2,7 +2,7 @@
 
 import * as actions from "@/actions";
 import { CreateTopicFormState } from "@/actions/create-topic";
-import { Button } from "@/components/ui/button";
+import FormButton from "@/components/common/form-button";
 import { DialogFooter } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -83,7 +83,7 @@ export default function TopicCreateForm() {
         </div>
       </div>
       <DialogFooter>
-        <Button type="submit">Save</Button>
+        <FormButton>Save</FormButton>
       </DialogFooter>
     </form>
   );
