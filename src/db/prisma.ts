@@ -22,6 +22,7 @@ const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 export const prisma: PrismaClient<
   Prisma.PrismaClientOptions,
   Prisma.LogLevel | Prisma.LogDefinition,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   any
 > =
   globalForPrisma.prisma ||
@@ -47,11 +48,6 @@ export const prisma: PrismaClient<
     ],
   });
 
-function sanitizeParams(params: string): string {
-  // Implement sanitization logic based on your application's needs
-  return params.replace(/password=.*?(&|$)/, "password=***$1");
-}
-
 // Listener for 'query' events
 prisma.$on("query", (e) => {
   logger.debug("Prisma::Query:" + e.query.replace(/\\"/g, '"'));
@@ -75,3 +71,8 @@ prisma.$on("error", (e) => {
 });
 
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+
+function sanitizeParams(params: string): string {
+  // Implement sanitization logic based on your application's needs
+  return params.replace(/password=.*?(&|$)/, "password=***$1");
+}
