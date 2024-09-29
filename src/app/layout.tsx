@@ -37,8 +37,8 @@ export default function RootLayout({
         <Providers>
           <AppHeader />
           <main>{children}</main>
+          {modal}
         </Providers>
-        {modal}
       </body>
     </html>
   );
