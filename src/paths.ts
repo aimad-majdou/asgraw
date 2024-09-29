@@ -1,13 +1,16 @@
 const PATHS = {
   home() {
-    return '/';
+    return "/";
   },
   topic: {
     index() {
-      return '/topics';
+      return "/topics";
     },
     show(topicSlug: string) {
       return `/topics/${topicSlug}`;
+    },
+    new() {
+      return "/topics/new";
     },
   },
   post: {

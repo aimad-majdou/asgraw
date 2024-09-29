@@ -33,8 +33,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <AppHeader />
-          <main>{children}</main>
+          <div className="grid grid-rows-[auto_1fr] gap-4 h-screen">
+            <AppHeader />
+            <main className="min-h-0">{children}</main>
+          </div>
         </Providers>
       </body>
     </html>

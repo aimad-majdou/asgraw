@@ -1,12 +1,11 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-
+import TopicList from "./topics/_components/topic-list";
 export default function Home() {
   return (
-    <div>
-      <Button>
-        <Link href="/topics/new">New topic</Link>
-      </Button>
+    <div className="grid grid-cols-[1fr_18rem] gap-4 h-full min-h-0 ">
+      {/* Ensure height is properly constrained */}
+      <div className="min-h-0 h-full " />
+      {/* Posts will take up the remaining space */}
+      <TopicList /> {/* Sidebar 18rem width */}
     </div>
   );
 }
