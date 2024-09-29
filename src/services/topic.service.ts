@@ -11,9 +11,9 @@ export const TopicService: Service<
   getAll: async () => {
     return prisma.topic.findMany();
   },
-  getOne: async (id) => {
+  getOne: async (slug) => {
     return prisma.topic.findUnique({
-      where: { id },
+      where: { slug },
     });
   },
   create: async (data) => {
